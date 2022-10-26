@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Polyzok - Landing page</title>
+		<title>Polyzok</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
 		<style>
 			body {
-				background-color: #000000;
+				background-color: #bfe3dd;
 				color: #000;
 			}
 
@@ -22,9 +22,8 @@
 		<div id="container"></div>
 
 		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">Polyzok</a> Landing page<br/>
-			Model: <a href="https://artstation.com/artwork/1AGwX" target="_blank" rel="noopener">Logo</a> by
-			<a href="https://artstation.com/glenatron" target="_blank" rel="noopener">José Blanco</a>, Prodware Spain.
+			<a href="webgl_animation_keyframes_polyzok_legal.html">Aviso Legal</a></p>
+			<img src="screenshots/Polyzok_Logo_Transp.png" alt="Polyzok">
 		</div>
 
 		<!-- Import maps polyfill -->
@@ -63,8 +62,8 @@
 
 			const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
-			const scene = new THREE.Scene();
-			scene.background = new THREE.Color( 0xbfe3dd );
+			const scene = new THREE.Scene(); 
+			scene.background = new THREE.Color( 0x000000 );
 			scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
 			const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
@@ -81,10 +80,10 @@
 
 			const loader = new GLTFLoader();
 			loader.setDRACOLoader( dracoLoader );
-			loader.load( 'models/gltf/Polyzok.glb', function ( gltf ) {
+			loader.load( 'models/gltf/LogoPolyzokWhite.glb', function ( gltf ) {
 
 				const model = gltf.scene;
-				model.position.set( 1, 1, 0 );
+				model.position.set( 0, 0, 0 );
 				model.scale.set( 1, 1, 1 );
 				scene.add( model );
 
